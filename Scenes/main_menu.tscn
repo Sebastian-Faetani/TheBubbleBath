@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7n0hasx166j"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_7ixj7"]
+[ext_resource type="Texture2D" uid="uid://drptk210kriwr" path="res://Assets/Images/fondomenu.png" id="1_463r7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8whcn"]
+bg_color = Color(0.380392, 0.227451, 0.141176, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwyyj"]
+bg_color = Color(0.382625, 0.225451, 0.141736, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7ixj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3.072, 3.08571)
+texture = ExtResource("1_463r7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 72.0
+offset_top = 349.0
+offset_right = 236.0
+offset_bottom = 504.0
+scale = Vector2(1.89954, 1.87915)
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Jugar"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Créditos"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Salir
+"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

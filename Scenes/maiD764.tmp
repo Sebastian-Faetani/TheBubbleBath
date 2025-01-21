@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy7n0hasx166j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8whcn"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwyyj"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 312.0
+
+[node name="Button" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Jugar"
+
+[node name="Button2" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Jugar"
+
+[node name="Button3" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whcn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwyyj")
+text = "Jugar"

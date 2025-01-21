@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 GameManager="*res://Scripts/GameManager.gd"
 SoundManager="*res://Scripts/SoundManager.gd"
+MusicManager="*res://Scripts/music_manager.gd"
 
 [file_customization]
 
