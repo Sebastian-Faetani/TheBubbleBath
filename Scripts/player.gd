@@ -8,8 +8,19 @@ extends CharacterBody3D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _process(_delta):
-	pass
+func _process(delta):
+	if interact_ray.is_colliding():
+		Global.canInteract = true
+		var collider = interact_ray.get_collider()
+		if Input.is_action_just_released("interact"):
+			if collider != null:
+				if collider.is_in_group("window"):
+					print("VENTANAAAAAAAAAAAAA")
+		if collider != null:
+			if collider.is_in_group("corridor") and GameManager.BoggartOn == true:
+					print("Saquese de aqui chamaco")
+	else:
+		Global.canInteract = false
 
 func _input(event):
 	if event is InputEventMouseMotion:

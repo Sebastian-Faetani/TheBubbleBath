@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dtc00hgn5gs71"]
+[gd_scene load_steps=32 format=4 uid="uid://dtc00hgn5gs71"]
 
 [ext_resource type="PackedScene" uid="uid://ch8g41ep2ykwn" path="res://Scenes/player.tscn" id="1_rbcl2"]
 
@@ -248,8 +248,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ybo56")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3lyr8"]
-size = Vector3(1.76709, 4.42468, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fny2"]
+size = Vector3(1.79126, 4.48315, 0.391174)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8du5m"]
 
@@ -282,6 +282,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3c0k7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3lyr8"]
+size = Vector3(2.90649, 7.81259, 3.76425)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ml067"]
 _surfaces = [{
@@ -362,12 +365,21 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baño/ventana 2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0656738, 1.71234, 0)
-shape = SubResource("BoxShape3D_3lyr8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0718994, 1.75476, 0.121918)
+shape = SubResource("BoxShape3D_8fny2")
 
-[node name="pasillo_ puerta" type="MeshInstance3D" parent="baño"]
+[node name="pasillo_ puerta" type="MeshInstance3D" parent="baño" groups=["corridor"]]
 mesh = SubResource("ArrayMesh_4avhi")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="baño/pasillo_ puerta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82129, 4, -4.82149)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="baño/pasillo_ puerta/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.569702, -0.0371232, -0.110611)
+shape = SubResource("BoxShape3D_3lyr8")
 
 [node name="techo" type="MeshInstance3D" parent="baño"]
 mesh = SubResource("ArrayMesh_2oc1r")
