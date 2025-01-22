@@ -7,73 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dvi3hlfs8kgio" path="res://Assets/banoterminado_pared.png" id="4_x1y8k"]
 [ext_resource type="Texture2D" uid="uid://cc1y8nsj0kqae" path="res://Assets/banoterminado_ventana.png" id="5_xckda"]
 [ext_resource type="Texture2D" uid="uid://b2um1wrw6i03c" path="res://Assets/banoterminado_pink-tiled-background.jpg" id="6_kyb28"]
-[ext_resource type="PackedScene" uid="uid://bhvlqwo1mbfsk" path="res://Scenes/candle.tscn" id="7_4fae6"]
+[ext_resource type="PackedScene" path="res://Scenes/candle.tscn" id="7_4fae6"]
 
 [sub_resource type="Environment" id="Environment_nkv5v"]
 background_mode = 1
 ambient_light_color = Color(0.299547, 0.299547, 0.299547, 1)
 ambient_light_energy = 0.01
-
-[sub_resource type="Animation" id="Animation_2ymjw"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bathroom/ventana 2")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Bathroom/puerta")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_ew6me"]
-resource_name = "WindowOpen"
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bathroom/ventana 2")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588491, 0, 0.808504)
-
-[sub_resource type="Animation" id="Animation_b0u11"]
-resource_name = "WindowOpening"
-length = 0.7
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bathroom/ventana 2")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.7, 1, 0, 0.588794, 0, 0.808283)
-
-[sub_resource type="Animation" id="Animation_i34po"]
-resource_name = "WindowClosing"
-length = 0.7
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bathroom/ventana 2")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588794, 0, 0.808283, 0.68, 1, 0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_srrvq"]
-resource_name = "windowClosed"
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bathroom/ventana 2")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_sdxwy"]
 resource_name = "DoorClosed"
@@ -107,6 +46,67 @@ tracks/0/path = NodePath("Bathroom/puerta")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.668715, 0, 0.743518)
+
+[sub_resource type="Animation" id="Animation_2ymjw"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bathroom/puerta")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_i34po"]
+resource_name = "WindowClosing"
+length = 0.7
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588794, 0, 0.808283, 0.68, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ew6me"]
+resource_name = "WindowOpen"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588491, 0, 0.808504)
+
+[sub_resource type="Animation" id="Animation_b0u11"]
+resource_name = "WindowOpening"
+length = 0.7
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.7, 1, 0, 0.588794, 0, 0.808283)
+
+[sub_resource type="Animation" id="Animation_srrvq"]
+resource_name = "windowClosed"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umqln"]
 _data = {
@@ -954,3 +954,10 @@ transform = Transform3D(-0.0395257, 0, 0.0918571, 0, 0.1, 0, -0.0918571, 0, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499723, 0.588336, -2.30342)
 light_color = Color(0.466667, 0.337255, 0.168627, 1)
 light_energy = 0.677
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62155, 2.54587, 0.895755)
+light_color = Color(0.237621, 0.164123, 0.067913, 1)
+light_energy = 1.5
+light_size = 1.0
+light_specular = 0.0
