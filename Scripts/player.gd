@@ -9,18 +9,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta):
-	if interact_ray.is_colliding():
-		Global.canInteract = true
-		var collider = interact_ray.get_collider()
-		if Input.is_action_just_released("interact") and Global.canInteract == true:
-			if collider != null:
-				if collider.is_in_group("window"):
-					print("VENTANAAAAAAAAAAAAA")
-		if collider != null:
-			if collider.is_in_group("corridor") and GameManager.BoggartOn == true:
-					print("Saquese de aqui chamaco")
-	else:
-		Global.canInteract = false
+	pass
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -30,4 +19,14 @@ func _input(event):
 
 
 func _physics_process(delta):
-	pass
+	if %InteractRay.is_colliding():
+		Global.canInteract = true
+		var target = %InteractRay.get_collider()
+		if Input.is_action_just_released("interact"):
+			if target.is_in_group("window"):
+				print("VENTANA")
+		if target.is_in_group("corridor") and GameManager.BoggartOn == true:
+				print("GO AWAY BOGGART")
+		else:
+			Global.canInteract = false
+		

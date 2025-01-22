@@ -359,7 +359,7 @@ layers = 2
 mesh = SubResource("ArrayMesh_kbmkk")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="baño/ventana 2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="baño/ventana 2" groups=["window"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9401, 4, -7.60235)
 collision_layer = 2
 collision_mask = 2
@@ -372,7 +372,7 @@ shape = SubResource("BoxShape3D_8fny2")
 mesh = SubResource("ArrayMesh_4avhi")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="baño/pasillo_ puerta"]
+[node name="StaticBody3D" type="StaticBody3D" parent="baño/pasillo_ puerta" groups=["corridor"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82129, 4, -4.82149)
 collision_layer = 2
 collision_mask = 2
