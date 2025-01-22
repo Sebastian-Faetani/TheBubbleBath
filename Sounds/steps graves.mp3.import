@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df7jw1ux5606d"
+path="res://.godot/imported/steps graves.mp3-602e2f54ebfc43c6d8d6a3f50c78a71a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/steps graves.mp3"
+dest_files=["res://.godot/imported/steps graves.mp3-602e2f54ebfc43c6d8d6a3f50c78a71a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

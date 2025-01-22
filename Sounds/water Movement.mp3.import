@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx3x8du2d1ipc"
+path="res://.godot/imported/water Movement.mp3-ba1844fed9f325cc9efa2ce74d2fe4fa.mp3str"
+
+[deps]
+
+source_file="res://Sounds/water Movement.mp3"
+dest_files=["res://.godot/imported/water Movement.mp3-ba1844fed9f325cc9efa2ce74d2fe4fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
