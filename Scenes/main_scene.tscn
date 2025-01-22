@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://3h4anhaa3ylm"]
+[gd_scene load_steps=78 format=4 uid="uid://3h4anhaa3ylm"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_11ixq"]
 [ext_resource type="PackedScene" uid="uid://ch8g41ep2ykwn" path="res://Scenes/player.tscn" id="1_rbcl2"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cmdffpmbp0dpq" path="res://Assets/banoterminado_wooden-parquet-floor.jpg" id="3_pxyob"]
 [ext_resource type="Texture2D" uid="uid://dvi3hlfs8kgio" path="res://Assets/banoterminado_pared.png" id="4_x1y8k"]
 [ext_resource type="Texture2D" uid="uid://cc1y8nsj0kqae" path="res://Assets/banoterminado_ventana.png" id="5_xckda"]
-[ext_resource type="Texture2D" uid="uid://b2um1wrw6i03c" path="res://Assets/banoterminado_pink-tiled-background.jpg" id="6_kyb28"]
-[ext_resource type="PackedScene" path="res://Scenes/candle.tscn" id="7_4fae6"]
+[ext_resource type="PackedScene" uid="uid://bhvlqwo1mbfsk" path="res://Scenes/candle.tscn" id="7_4fae6"]
+[ext_resource type="Texture2D" uid="uid://cxqgbvsaf7iue" path="res://Assets/pink-tiled-background.jpg" id="7_towyh"]
 
 [sub_resource type="Environment" id="Environment_nkv5v"]
 background_mode = 1
@@ -182,7 +182,7 @@ states/WindowOpening/position = Vector2(343, -18)
 states/windowClosed/node = SubResource("AnimationNodeAnimation_3xflv")
 states/windowClosed/position = Vector2(343, 77)
 transitions = ["Start", "windowClosed", SubResource("AnimationNodeStateMachineTransition_jmqvp"), "windowClosed", "WindowOpening", SubResource("AnimationNodeStateMachineTransition_noc30"), "WindowOpening", "WindowOpen", SubResource("AnimationNodeStateMachineTransition_ddoai"), "WindowOpen", "WindowClosing", SubResource("AnimationNodeStateMachineTransition_vkeuq"), "WindowClosing", "windowClosed", SubResource("AnimationNodeStateMachineTransition_37ax4"), "Start", "DoorClosed", SubResource("AnimationNodeStateMachineTransition_a8dwm"), "DoorClosed", "PliOpen", SubResource("AnimationNodeStateMachineTransition_7of40"), "PliOpen", "DoorOpen", SubResource("AnimationNodeStateMachineTransition_7l086")]
-graph_offset = Vector2(-98, 36.8771)
+graph_offset = Vector2(-96, -52.1229)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21nay"]
 resource_name = "agua"
@@ -251,6 +251,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m83hu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acqlu"]
+size = Vector3(4.79929, 0.370117, 3.18216)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c1lv"]
 albedo_texture = ExtResource("3_pxyob")
@@ -734,7 +737,7 @@ shadow_mesh = SubResource("ArrayMesh_gvycu")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhtm1"]
 resource_name = "azulejoPared"
 cull_mode = 2
-albedo_texture = ExtResource("6_kyb28")
+albedo_texture = ExtResource("7_towyh")
 metallic = 0.253968
 roughness = 0.5
 
@@ -864,10 +867,18 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="banera" type="MeshInstance3D" parent="Bathroom"]
+[node name="banera" type="MeshInstance3D" parent="Bathroom" groups=["Bath"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79189, 2.65795, -4.8275)
 mesh = SubResource("ArrayMesh_uedg1")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bathroom/banera" groups=["Bath"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bathroom/banera/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.542343, -0.117676, -0.00947571)
+shape = SubResource("BoxShape3D_acqlu")
 
 [node name="huecoventana" type="MeshInstance3D" parent="Bathroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78975, 5.73317, -7.29664)
@@ -954,6 +965,7 @@ transform = Transform3D(-0.0395257, 0, 0.0918571, 0, 0.1, 0, -0.0918571, 0, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499723, 0.588336, -2.30342)
 light_color = Color(0.466667, 0.337255, 0.168627, 1)
 light_energy = 0.677
+light_specular = 0.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62155, 2.54587, 0.895755)

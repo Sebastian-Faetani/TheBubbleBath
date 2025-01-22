@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2um1wrw6i03c"
-path.s3tc="res://.godot/imported/banoterminado_pink-tiled-background.jpg-ca1520ad5aac79ad08d5adbf3ec715dd.s3tc.ctex"
+uid="uid://dhlypgopoqray"
+path.s3tc="res://.godot/imported/Vela2spritesheet.png-ad00ab03ddf101a1107d200c451ce4c1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "109858ae870f2b4521e936875f799650"
-}
 
 [deps]
 
-source_file="res://Assets/banoterminado_pink-tiled-background.jpg"
-dest_files=["res://.godot/imported/banoterminado_pink-tiled-background.jpg-ca1520ad5aac79ad08d5adbf3ec715dd.s3tc.ctex"]
+source_file="res://Assets/Candle/Vela2spritesheet.png"
+dest_files=["res://.godot/imported/Vela2spritesheet.png-ad00ab03ddf101a1107d200c451ce4c1.s3tc.ctex"]
 
 [params]
 
