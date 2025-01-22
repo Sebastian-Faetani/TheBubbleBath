@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmer4lvkb2e3"
-path.s3tc="res://.godot/imported/Candle.png-f2fe0937fcf22daa25c2d0ebcb6d0d0c.s3tc.ctex"
+uid="uid://cc1y8nsj0kqae"
+path.s3tc="res://.godot/imported/banoterminado_ventana.png-51996a0741db841b418b05e45fe8ae66.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "05fe7f5ddb15825d29be7d611dead930"
+}
 
 [deps]
 
-source_file="res://Assets/Candle.png"
-dest_files=["res://.godot/imported/Candle.png-f2fe0937fcf22daa25c2d0ebcb6d0d0c.s3tc.ctex"]
+source_file="res://Assets/banoterminado_ventana.png"
+dest_files=["res://.godot/imported/banoterminado_ventana.png-51996a0741db841b418b05e45fe8ae66.s3tc.ctex"]
 
 [params]
 
