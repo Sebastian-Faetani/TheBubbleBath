@@ -1,5 +1,5 @@
 extends Node
-var music: bool
 @onready var button_click: AudioStreamPlayer = $ButtonClick
-func ButtonClick ():
+
+func ButtonClicked():
 	button_click.play()

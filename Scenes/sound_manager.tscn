@@ -8,3 +8,4 @@ script = ExtResource("1_kv8k6")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_05hs3")
+bus = &"Click"

@@ -12,7 +12,7 @@ func _process(delta):
 	if interact_ray.is_colliding():
 		Global.canInteract = true
 		var collider = interact_ray.get_collider()
-		if Input.is_action_just_released("interact"):
+		if Input.is_action_just_released("interact") and Global.canInteract == true:
 			if collider != null:
 				if collider.is_in_group("window"):
 					print("VENTANAAAAAAAAAAAAA")
