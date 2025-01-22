@@ -23,8 +23,10 @@ func _physics_process(delta):
 		Global.canInteract = true
 		var target = %InteractRay.get_collider()
 		if Input.is_action_just_released("interact"):
-			if target.is_in_group("window"):
-				print("VENTANA")
+			if target.is_in_group("window") and GameManager.WindowOpened == false:
+				GameManager.WindowOpening = true
+			else:
+				GameManager.WindowClosing = true
 		if target.is_in_group("corridor") and GameManager.BoggartOn == true:
 				print("GO AWAY BOGGART")
 		else:

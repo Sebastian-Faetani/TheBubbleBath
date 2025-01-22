@@ -1,5 +1,6 @@
-[gd_scene load_steps=51 format=4 uid="uid://3h4anhaa3ylm"]
+[gd_scene load_steps=77 format=4 uid="uid://3h4anhaa3ylm"]
 
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_11ixq"]
 [ext_resource type="PackedScene" uid="uid://ch8g41ep2ykwn" path="res://Scenes/player.tscn" id="1_rbcl2"]
 [ext_resource type="Texture2D" uid="uid://co887kew1xjyd" path="res://Assets/banoterminado_ceramica.png" id="2_fu1o6"]
 [ext_resource type="Texture2D" uid="uid://cmdffpmbp0dpq" path="res://Assets/banoterminado_wooden-parquet-floor.jpg" id="3_pxyob"]
@@ -12,6 +13,176 @@
 background_mode = 1
 ambient_light_color = Color(0.299547, 0.299547, 0.299547, 1)
 ambient_light_energy = 0.01
+
+[sub_resource type="Animation" id="Animation_2ymjw"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bathroom/puerta")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ew6me"]
+resource_name = "WindowOpen"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588491, 0, 0.808504)
+
+[sub_resource type="Animation" id="Animation_b0u11"]
+resource_name = "WindowOpening"
+length = 0.7
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.7, 1, 0, 0.588794, 0, 0.808283)
+
+[sub_resource type="Animation" id="Animation_i34po"]
+resource_name = "WindowClosing"
+length = 0.7
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.588794, 0, 0.808283, 0.68, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_srrvq"]
+resource_name = "windowClosed"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/ventana 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_sdxwy"]
+resource_name = "DoorClosed"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/puerta")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8hrjk"]
+resource_name = "DoorOpen"
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/puerta")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.668482, 0, 0.743728)
+
+[sub_resource type="Animation" id="Animation_1t71d"]
+resource_name = "PliOpen"
+length = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bathroom/puerta")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.668715, 0, 0.743518)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umqln"]
+_data = {
+"DoorClosed": SubResource("Animation_sdxwy"),
+"DoorOpen": SubResource("Animation_8hrjk"),
+"PliOpen": SubResource("Animation_1t71d"),
+"RESET": SubResource("Animation_2ymjw"),
+"WindowClosing": SubResource("Animation_i34po"),
+"WindowOpen": SubResource("Animation_ew6me"),
+"WindowOpening": SubResource("Animation_b0u11"),
+"windowClosed": SubResource("Animation_srrvq")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iq488"]
+animation = &"DoorClosed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a2iuh"]
+animation = &"DoorOpen"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mnl2s"]
+animation = &"PliOpen"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l7uui"]
+animation = &"WindowClosing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ja4q"]
+animation = &"WindowOpen"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ihk8"]
+animation = &"WindowOpening"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3xflv"]
+animation = &"windowClosed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jmqvp"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_noc30"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ddoai"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vkeuq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_37ax4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8dwm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7of40"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7l086"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_14esu"]
+states/DoorClosed/node = SubResource("AnimationNodeAnimation_iq488")
+states/DoorClosed/position = Vector2(333, 180.877)
+states/DoorOpen/node = SubResource("AnimationNodeAnimation_a2iuh")
+states/DoorOpen/position = Vector2(598, 180.877)
+states/PliOpen/node = SubResource("AnimationNodeAnimation_mnl2s")
+states/PliOpen/position = Vector2(461, 180.877)
+states/Start/position = Vector2(189, 153)
+states/WindowClosing/node = SubResource("AnimationNodeAnimation_l7uui")
+states/WindowClosing/position = Vector2(518, 77)
+states/WindowOpen/node = SubResource("AnimationNodeAnimation_5ja4q")
+states/WindowOpen/position = Vector2(518, -18)
+states/WindowOpening/node = SubResource("AnimationNodeAnimation_2ihk8")
+states/WindowOpening/position = Vector2(343, -18)
+states/windowClosed/node = SubResource("AnimationNodeAnimation_3xflv")
+states/windowClosed/position = Vector2(343, 77)
+transitions = ["Start", "windowClosed", SubResource("AnimationNodeStateMachineTransition_jmqvp"), "windowClosed", "WindowOpening", SubResource("AnimationNodeStateMachineTransition_noc30"), "WindowOpening", "WindowOpen", SubResource("AnimationNodeStateMachineTransition_ddoai"), "WindowOpen", "WindowClosing", SubResource("AnimationNodeStateMachineTransition_vkeuq"), "WindowClosing", "windowClosed", SubResource("AnimationNodeStateMachineTransition_37ax4"), "Start", "DoorClosed", SubResource("AnimationNodeStateMachineTransition_a8dwm"), "DoorClosed", "PliOpen", SubResource("AnimationNodeStateMachineTransition_7of40"), "PliOpen", "DoorOpen", SubResource("AnimationNodeStateMachineTransition_7l086")]
+graph_offset = Vector2(-98, 36.8771)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21nay"]
 resource_name = "agua"
@@ -672,12 +843,23 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dsxet")
 
 [node name="MainScene" type="Node3D"]
+script = ExtResource("1_11ixq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nkv5v")
 
 [node name="Player" parent="." instance=ExtResource("1_rbcl2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.477639, 2.13998, -2.31075)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_umqln")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_14esu")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
