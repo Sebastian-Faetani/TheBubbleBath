@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chiu5qelctxnr"
+path="res://.godot/imported/bubble pop (options).mp3-470a61a9c90535379db905741b4ac61f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/bubble pop (options).mp3"
+dest_files=["res://.godot/imported/bubble pop (options).mp3-470a61a9c90535379db905741b4ac61f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
