@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhvlqwo1mbfsk"]
+[gd_scene load_steps=33 format=3 uid="uid://bhvlqwo1mbfsk"]
 
+[ext_resource type="Script" path="res://Scripts/candle.gd" id="1_b2nxd"]
 [ext_resource type="Texture2D" uid="uid://n5kimp4lpfmf" path="res://Assets/Candle/Vela5Spritesheet.png" id="1_cq173"]
 [ext_resource type="Texture2D" uid="uid://d2q7nogck3dpn" path="res://Assets/Candle/Vela4Spritesheet.png" id="2_8s26k"]
 [ext_resource type="Texture2D" uid="uid://47kqml0cjgqx" path="res://Assets/Candle/Vela1Spritesheet.png" id="3_4q4bl"]
@@ -165,7 +166,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_283sx")
 }],
 "loop": true,
-"name": &"Full First",
+"name": &"FullFirst",
 "speed": 5.0
 }, {
 "frames": [{
@@ -186,6 +187,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"Second",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"TheEnd",
 "speed": 5.0
 }, {
 "frames": [{
@@ -211,13 +217,14 @@ animations = [{
 
 [node name="Candle" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_b2nxd")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98796, 0)
 shaded = true
 sprite_frames = SubResource("SpriteFrames_bcuto")
-animation = &"Full First"
-autoplay = "Full First"
+animation = &"TheEnd"
+autoplay = "FullFirst"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5, 0.896962)

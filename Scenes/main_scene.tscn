@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://3h4anhaa3ylm"]
+[gd_scene load_steps=79 format=4 uid="uid://3h4anhaa3ylm"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_11ixq"]
 [ext_resource type="PackedScene" uid="uid://ch8g41ep2ykwn" path="res://Scenes/player.tscn" id="1_rbcl2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc1y8nsj0kqae" path="res://Assets/banoterminado_ventana.png" id="5_xckda"]
 [ext_resource type="PackedScene" uid="uid://bhvlqwo1mbfsk" path="res://Scenes/candle.tscn" id="7_4fae6"]
 [ext_resource type="Texture2D" uid="uid://cxqgbvsaf7iue" path="res://Assets/pink-tiled-background.jpg" id="7_towyh"]
+[ext_resource type="Texture2D" uid="uid://beyqb3qscl2b0" path="res://Assets/Boggart.png" id="9_7u2c7"]
 
 [sub_resource type="Environment" id="Environment_nkv5v"]
 background_mode = 1
@@ -169,7 +170,7 @@ advance_mode = 2
 states/DoorClosed/node = SubResource("AnimationNodeAnimation_iq488")
 states/DoorClosed/position = Vector2(333, 180.877)
 states/DoorOpen/node = SubResource("AnimationNodeAnimation_a2iuh")
-states/DoorOpen/position = Vector2(598, 180.877)
+states/DoorOpen/position = Vector2(600, 180.877)
 states/PliOpen/node = SubResource("AnimationNodeAnimation_mnl2s")
 states/PliOpen/position = Vector2(461, 180.877)
 states/Start/position = Vector2(189, 153)
@@ -967,9 +968,49 @@ light_color = Color(0.466667, 0.337255, 0.168627, 1)
 light_energy = 0.677
 light_specular = 0.0
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7382, 1.11429, -2.38359)
+light_color = Color(0.466667, 0.337255, 0.168627, 1)
+light_energy = 0.677
+light_specular = 0.0
+omni_range = 6.864
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62155, 2.54587, 0.895755)
 light_color = Color(0.237621, 0.164123, 0.067913, 1)
 light_energy = 1.5
 light_size = 1.0
 light_specular = 0.0
+
+[node name="Boggart" type="Node3D" parent="."]
+
+[node name="BoggartPos1" type="Sprite3D" parent="Boggart"]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 8.03418, 0.747573, -2.40183)
+visible = false
+shaded = true
+texture = ExtResource("9_7u2c7")
+region_enabled = true
+region_rect = Rect2(19, 33, 1282, 2009)
+
+[node name="BoggartPos2" type="Sprite3D" parent="Boggart"]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 5.65297, 0.747573, -2.63543)
+visible = false
+shaded = true
+texture = ExtResource("9_7u2c7")
+region_enabled = true
+region_rect = Rect2(2732, 19, 1238, 2019)
+
+[node name="BoggartPos3" type="Sprite3D" parent="Boggart"]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 4.01885, 2.43789, -2.89279)
+visible = false
+shaded = true
+texture = ExtResource("9_7u2c7")
+region_enabled = true
+region_rect = Rect2(1706, 37, 972, 1726)
+
+[node name="WindowTimer" type="Timer" parent="."]
+
+[node name="BoggartTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="WindowTimer" to="." method="_on_window_timer_timeout"]
+[connection signal="timeout" from="BoggartTimer" to="." method="_on_boggart_timer_timeout"]

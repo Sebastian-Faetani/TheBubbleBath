@@ -1,15 +1,24 @@
 extends CharacterBody3D
 
 @export var MOUSE_SENS = 0.5
+@export var showerProg = 0
+@export var showerMax = 100
+
 @onready var head = $Head
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 @onready var camera_3d: Camera3D = $Head/Camera3D
+@onready var eyes_open_ui: Control = $EyesOpenUI
+@onready var eyes_closed_ui: Control = $EyesClosedUI
+@onready var shower_progress: TextureProgressBar = $EyesClosedUI/ShowerProgress
+
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta):
-	pass
+	if GameManager.GameOver == true:
+		get_tree().quit()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -23,12 +32,11 @@ func _physics_process(delta):
 		Global.canInteract = true
 		var target = %InteractRay.get_collider()
 		if Input.is_action_just_released("interact"):
-			if target.is_in_group("window") and GameManager.WindowOpened == false:
-				GameManager.WindowOpening = true
-			else:
+			if target.is_in_group("window") and GameManager.WindowOpened == true:
 				GameManager.WindowClosing = true
 		if target.is_in_group("corridor") and GameManager.BoggartOn == true:
-				print("GO AWAY BOGGART")
+				GameManager.BoggartOn = false
+				print("BYE BYE")
 		else:
 			Global.canInteract = false
 		
