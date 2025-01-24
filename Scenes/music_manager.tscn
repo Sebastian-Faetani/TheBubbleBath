@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5ksbgyvpk0dn"]
+[gd_scene load_steps=4 format=3 uid="uid://c5ksbgyvpk0dn"]
 
 [ext_resource type="Script" path="res://Scripts/music_manager.gd" id="1_r2l6j"]
+[ext_resource type="AudioStream" uid="uid://o0bme832ugqr" path="res://Sounds/lofi-ambient-pianoline-03-116136.mp3" id="2_rtjqg"]
+[ext_resource type="AudioStream" uid="uid://cjddj8n8cnkbw" path="res://Sounds/sonido ambiente largo.mp3" id="3_tex5m"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_r2l6j")
+
+[node name="FondoMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rtjqg")
+volume_db = -2.0
+bus = &"Background music"
+
+[node name="SonidoAmbiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tex5m")
+volume_db = -10.0
+bus = &"Background music"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd1tuwanfkqly"
+path="res://.godot/imported/sonido ambiente corto.mp3-fc9a692bb0316a5a17e9ba7244385273.mp3str"
+
+[deps]
+
+source_file="res://Sounds/sonido ambiente corto.mp3"
+dest_files=["res://.godot/imported/sonido ambiente corto.mp3-fc9a692bb0316a5a17e9ba7244385273.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

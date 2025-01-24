@@ -7,7 +7,7 @@ extends MeshInstance3D
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if GameManager.DoorOpening == true and GameManager.DoorOpen == false:
 		playback.travel("PliOpen")
 		print("DooruNSTUCK")

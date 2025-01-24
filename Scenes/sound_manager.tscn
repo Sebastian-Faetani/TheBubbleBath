@@ -1,11 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://0efiuevcl1h"]
+[gd_scene load_steps=8 format=3 uid="uid://0efiuevcl1h"]
 
 [ext_resource type="Script" path="res://Scripts/SoundManager.gd" id="1_kv8k6"]
-[ext_resource type="AudioStream" uid="uid://cxbt5d6g1p5vy" path="res://Sounds/buttonClick.mp3" id="2_05hs3"]
+[ext_resource type="AudioStream" uid="uid://chiu5qelctxnr" path="res://Sounds/bubble pop (options).mp3" id="2_sb7xe"]
+[ext_resource type="AudioStream" uid="uid://dwwvopwsoilp5" path="res://Sounds/Open door.mp3" id="4_h06n4"]
+[ext_resource type="AudioStream" uid="uid://dbst3m0slcuxq" path="res://Sounds/door slide (ventana).mp3" id="4_mc473"]
+[ext_resource type="AudioStream" uid="uid://blnxoxhgqdvd6" path="res://Sounds/paint-brush-2-43169.mp3" id="5_h271y"]
+[ext_resource type="AudioStream" uid="uid://cx3x8du2d1ipc" path="res://Sounds/water Movement.mp3" id="6_lr8i2"]
+[ext_resource type="AudioStream" uid="uid://dtxf20q33pi0c" path="res://Sounds/Pasos.mp3" id="7_ygiol"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_kv8k6")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_05hs3")
+stream = ExtResource("2_sb7xe")
 bus = &"Click"
+
+[node name="VentanaAbierta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mc473")
+bus = &"Background music"
+
+[node name="Puerta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h06n4")
+volume_db = -0.493
+bus = &"Background music"
+
+[node name="LavarPelo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h271y")
+volume_db = -2.0
+bus = &"Background music"
+
+[node name="Bañera" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lr8i2")
+volume_db = -2.0
+bus = &"Background music"
+
+[node name="Pasos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ygiol")
+volume_db = -2.0
+bus = &"Background music"

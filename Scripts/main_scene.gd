@@ -25,6 +25,7 @@ signal timer_updated(current_time: float, progress: float)
 func _ready() -> void:
 	window_timer.start(windowTime)
 	boggart_timer.start(boggarTime)
+	MusicManager.fondoSceneStart()
 
 func _process(delta: float) -> void:
 	if GameManager.WindowOpening == true and GameManager.WindowOpened == false:
@@ -68,10 +69,11 @@ func _handle_boggart(progress: float) -> void:
 		GameManager.BoggartSprite2 = false
 		print("80%")
 	elif progress >= 1:
+		MusicManager.fondoSceneStop()
 		GameManager.GameOver = true
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 		
 

@@ -16,8 +16,9 @@ extends CharacterBody3D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _process(delta):
+func _process(_delta):
 	if GameManager.GameOver == true:
+		MusicManager.fondoSceneStop()
 		get_tree().quit()
 
 func _input(event):
@@ -27,7 +28,7 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-32), deg_to_rad(60))
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if %InteractRay.is_colliding():
 		#Global.canInteract = true
 		var target = %InteractRay.get_collider()
