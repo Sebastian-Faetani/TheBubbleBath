@@ -29,14 +29,20 @@ func _input(event):
 
 func _physics_process(delta):
 	if %InteractRay.is_colliding():
-		Global.canInteract = true
+		#Global.canInteract = true
 		var target = %InteractRay.get_collider()
 		if Input.is_action_just_released("interact"):
 			if target.is_in_group("window") and GameManager.WindowOpened == true:
 				GameManager.WindowClosing = true
 		if target.is_in_group("corridor") and GameManager.BoggartOn == true:
-				GameManager.BoggartOn = false
-				print("BYE BYE")
-		else:
-			Global.canInteract = false
+			GameManager.BoggartOn = false
+			print("BYE BYE")
+		#if target.is_in_group("Bath"):
+			#eyes_open_ui.hide()
+			#eyes_closed_ui.show()
+		#else:
+			#eyes_open_ui.show()
+			#eyes_closed_ui.hide()
+		#else:
+			#Global.canInteract = false
 		

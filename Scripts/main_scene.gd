@@ -2,14 +2,15 @@ extends Node3D
 
 @onready var player: CharacterBody3D = $Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var animation_tree: AnimationTree = $AnimationTree
 @onready var window_timer: Timer = $WindowTimer
 @onready var boggart_timer: Timer = $BoggartTimer
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 @export var windowTime = randf_range(10.0, 30.0)
 @export var boggarTime = randf_range(10.0, 30.0)
 
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+
 @onready var boggart_pos_1: Sprite3D = $Boggart/BoggartPos1
 @onready var boggart_pos_2: Sprite3D = $Boggart/BoggartPos2
 @onready var boggart_pos_3: Sprite3D = $Boggart/BoggartPos3
@@ -26,6 +27,17 @@ func _ready() -> void:
 	boggart_timer.start(boggarTime)
 
 func _process(delta: float) -> void:
+	if GameManager.WindowOpening == true and GameManager.WindowOpened == false:
+		playback.travel("WindowOpening")
+		GameManager.WindowOpening = false
+		GameManager.WindowOpened = true
+		
+	if GameManager.WindowClosing == true and GameManager.WindowOpened == true:
+		playback.travel("WindowClosing")
+		GameManager.WindowClosing = false
+		GameManager.WindowOpened = false
+	
+	
 	if GameManager.BoggartOn == true and GameManager.BoggartSprite1 == true:
 		boggart_pos_1.show()
 	elif GameManager.BoggartOn == true and GameManager.BoggartSprite2 == true:
@@ -60,33 +72,24 @@ func _handle_boggart(progress: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if GameManager.WindowOpening == true and GameManager.WindowOpened == false:
-		playback.travel("WindowOpening")
-		GameManager.WindowOpening = false
-		GameManager.WindowOpened = true
-		
-	if GameManager.WindowClosing == true and GameManager.WindowOpened == true:
-		playback.travel("WindowClosing")
-		GameManager.WindowClosing = false
-		GameManager.WindowOpened = false
-		
-	if GameManager.DoorOpening == true and GameManager.DoorOpen == false:
-		GameManager.DoorOpen = true
-		playback.travel("PliOpen")
+	pass
 		
 
 
 func _on_window_timer_timeout() -> void:
 	if GameManager.WindowOpened == false:
 		GameManager.WindowOpening = true
+		print("Window opened")
 	window_timer.start()
-	print("Window opened")
+	
 
 
 func _on_boggart_timer_timeout() -> void:
 	if GameManager.DoorOpen == false:
 		GameManager.DoorOpening = true
+		print("DoorStuck")
 	if GameManager.BoggartOn == false:
 		GameManager.BoggartOn = true
+		print("Boggart in the base")
 	boggart_timer.start()
-	print("Boggart in the base")
+	
