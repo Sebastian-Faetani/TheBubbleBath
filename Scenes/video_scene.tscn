@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3jf6lucljjeo"]
+[gd_scene load_steps=3 format=3 uid="uid://ijjuda2p582q"]
 
 [ext_resource type="VideoStream" path="res://Assets/Video/cinemática-the-bubble-bath.ogv" id="1_g4ai6"]
 [ext_resource type="Script" path="res://Scripts/video_scene.gd" id="1_rkmaa"]
