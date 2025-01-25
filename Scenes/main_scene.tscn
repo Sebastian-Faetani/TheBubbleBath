@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://3h4anhaa3ylm"]
+[gd_scene load_steps=69 format=4 uid="uid://3h4anhaa3ylm"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_11ixq"]
 [ext_resource type="PackedScene" uid="uid://ch8g41ep2ykwn" path="res://Scenes/player.tscn" id="1_rbcl2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhvlqwo1mbfsk" path="res://Scenes/candle.tscn" id="7_4fae6"]
 [ext_resource type="Texture2D" uid="uid://cxqgbvsaf7iue" path="res://Assets/pink-tiled-background.jpg" id="7_towyh"]
 [ext_resource type="Texture2D" uid="uid://beyqb3qscl2b0" path="res://Assets/Boggart.png" id="9_7u2c7"]
+[ext_resource type="AudioStream" uid="uid://dtxf20q33pi0c" path="res://Sounds/Pasos.mp3" id="11_enqwa"]
 
 [sub_resource type="Environment" id="Environment_nkv5v"]
 background_mode = 1
@@ -837,7 +838,7 @@ light_energy = 0.677
 light_specular = 0.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7382, 1.11429, -2.38359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3303, 1.11429, -2.38359)
 light_color = Color(0.466667, 0.337255, 0.168627, 1)
 light_energy = 0.677
 light_specular = 0.0
@@ -880,5 +881,24 @@ region_rect = Rect2(1706, 37, 972, 1726)
 
 [node name="BoggartTimer" type="Timer" parent="."]
 
+[node name="Pasos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_enqwa")
+bus = &"Background music"
+
+[node name="BoggartSteps1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03198, 0.427858, -2.56302)
+stream = ExtResource("11_enqwa")
+
+[node name="BoggartSteps2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.94551, 0, -3.27962)
+stream = ExtResource("11_enqwa")
+
+[node name="BoggartSteps3" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45931, 0, -2.86456)
+stream = ExtResource("11_enqwa")
+
 [connection signal="timeout" from="WindowTimer" to="." method="_on_window_timer_timeout"]
 [connection signal="timeout" from="BoggartTimer" to="." method="_on_boggart_timer_timeout"]
+[connection signal="finished" from="BoggartSteps1" to="." method="_on_boggart_steps_1_finished"]
+[connection signal="finished" from="BoggartSteps2" to="." method="_on_boggart_steps_2_finished"]
+[connection signal="finished" from="BoggartSteps3" to="." method="_on_boggart_steps_3_finished"]

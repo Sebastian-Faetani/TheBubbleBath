@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://de82u6vgkhekv"]
+
+[ext_resource type="Script" path="res://Scripts/win_scene.gd" id="1_w5fel"]
+[ext_resource type="Texture2D" uid="uid://bai2vtabwknu" path="res://Assets/PlaceHolderWin.png" id="2_jgatr"]
+
+[node name="WinScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5fel")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576, 323.75)
+scale = Vector2(1.40831, 1.32618)
+texture = ExtResource("2_jgatr")
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 561.0
+offset_right = 625.0
+offset_bottom = 592.0
+text = "MENÚ"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

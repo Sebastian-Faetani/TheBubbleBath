@@ -8,6 +8,9 @@ extends Node3D
 
 @export var windowTime = randf_range(10.0, 30.0)
 @export var boggarTime = randf_range(10.0, 30.0)
+@onready var boggart_steps_1: AudioStreamPlayer3D = $BoggartSteps1
+@onready var boggart_steps_2: AudioStreamPlayer3D = $BoggartSteps2
+@onready var boggart_steps_3: AudioStreamPlayer3D = $BoggartSteps3
 
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
@@ -29,11 +32,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if GameManager.WindowOpening == true and GameManager.WindowOpened == false:
+		SoundManager.WindowMove()
 		playback.travel("WindowOpening")
 		GameManager.WindowOpening = false
 		GameManager.WindowOpened = true
 		
 	if GameManager.WindowClosing == true and GameManager.WindowOpened == true:
+		SoundManager.WindowMove()
 		playback.travel("WindowClosing")
 		GameManager.WindowClosing = false
 		GameManager.WindowOpened = false
@@ -41,10 +46,22 @@ func _process(delta: float) -> void:
 	
 	if GameManager.BoggartOn == true and GameManager.BoggartSprite1 == true:
 		boggart_pos_1.show()
+		if GameManager.boggartStep == false:
+			boggart_steps_1.play()
+		else:
+			boggart_steps_1.stop()
 	elif GameManager.BoggartOn == true and GameManager.BoggartSprite2 == true:
+		if GameManager.boggartStep == false:
+			boggart_steps_2.play()
+		else:
+			boggart_steps_2.stop()
 		boggart_pos_2.show()
 		boggart_pos_1.hide()
 	elif GameManager.BoggartOn == true and GameManager.BoggartSprite3 == true:
+		if GameManager.boggartStep == false:
+			boggart_steps_3.play()
+		else:
+			boggart_steps_3.stop()
 		boggart_pos_3.show()
 		boggart_pos_2.hide()
 
@@ -95,3 +112,15 @@ func _on_boggart_timer_timeout() -> void:
 		print("Boggart in the base")
 	boggart_timer.start()
 	
+
+
+func _on_boggart_steps_1_finished() -> void:
+	GameManager.boggartStep = true
+
+
+func _on_boggart_steps_2_finished() -> void:
+	GameManager.boggartStep = true
+
+
+func _on_boggart_steps_3_finished() -> void:
+	GameManager.boggartStep = true

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3jf6lucljjeo"]
+
+[ext_resource type="VideoStream" path="res://Assets/Video/cinemática-the-bubble-bath.ogv" id="1_g4ai6"]
+[ext_resource type="Script" path="res://Scripts/video_scene.gd" id="1_rkmaa"]
+
+[node name="VideoScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rkmaa")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.6, 0.596)
+stream = ExtResource("1_g4ai6")
+autoplay = true
+
+[node name="Skip" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1017.0
+offset_top = 584.0
+offset_right = 1120.0
+offset_bottom = 615.0
+text = "CONTINUAR"
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

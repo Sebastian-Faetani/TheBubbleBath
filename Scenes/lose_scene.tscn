@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://7s457x4p0gdp"]
+
+[ext_resource type="Script" path="res://Scripts/lose_scene.gd" id="1_6xc6m"]
+[ext_resource type="Texture2D" uid="uid://3rv67m70uqup" path="res://Assets/PlaceHolderDeath.png" id="2_0lemp"]
+
+[node name="LoseScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xc6m")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576.25, 324)
+scale = Vector2(1.41636, 1.32787)
+texture = ExtResource("2_0lemp")
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 563.0
+offset_right = 613.0
+offset_bottom = 594.0
+text = "MENÚ"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

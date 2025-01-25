@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://cd21hxjuwn5ix"]
+[gd_scene load_steps=20 format=4 uid="uid://cd21hxjuwn5ix"]
 
 [ext_resource type="Script" path="res://Scripts/puerta.gd" id="1_qe8s0"]
+[ext_resource type="AudioStream" uid="uid://dbst3m0slcuxq" path="res://Sounds/door slide (ventana).mp3" id="2_a3scn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5tie"]
 resource_name = "madera1"
@@ -83,7 +84,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_smbu8"]
+[sub_resource type="Animation" id="Animation_q51ct"]
+resource_name = "DoorOpen"
 length = 0.001
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -91,7 +93,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.668482, 0, 0.743728)
 
 [sub_resource type="Animation" id="Animation_edbvy"]
 resource_name = "PliOpen"
@@ -104,8 +106,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.668482, 0, 0.743728)
 
-[sub_resource type="Animation" id="Animation_q51ct"]
-resource_name = "DoorOpen"
+[sub_resource type="Animation" id="Animation_smbu8"]
 length = 0.001
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -113,7 +114,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.668482, 0, 0.743728)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xoenx"]
 _data = {
@@ -169,3 +170,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_3kwvy")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13944)
+stream = ExtResource("2_a3scn")

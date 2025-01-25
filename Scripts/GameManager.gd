@@ -10,6 +10,11 @@ var GameOver : bool
 var BoggartSprite1 : bool
 var BoggartSprite2 : bool
 var BoggartSprite3 : bool
+var EyesClosed : bool
+var GameWon : bool
+var EyesHurty : bool
+var animStop : bool
+var boggartStep : bool
 
 
 
@@ -25,3 +30,8 @@ func _ready() -> void:
 	BoggartSprite1 = false
 	BoggartSprite2 = false
 	BoggartSprite3 = false
+	EyesClosed = false
+	GameWon = false
+	EyesHurty = false
+	animStop = false
+	boggartStep = false
