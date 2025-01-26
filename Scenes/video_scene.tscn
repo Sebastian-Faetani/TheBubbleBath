@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ijjuda2p582q"]
 
-[ext_resource type="VideoStream" path="res://Assets/Video/cinemática-the-bubble-bath.ogv" id="1_g4ai6"]
 [ext_resource type="Script" path="res://Scripts/video_scene.gd" id="1_rkmaa"]
+[ext_resource type="VideoStream" path="res://Assets/Video/cinemática-the-bubble-bath(1).ogv" id="2_h203q"]
 
 [node name="VideoScene" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1088.0
 scale = Vector2(0.6, 0.596)
-stream = ExtResource("1_g4ai6")
+stream = ExtResource("2_h203q")
 autoplay = true
 
 [node name="Skip" type="Button" parent="."]

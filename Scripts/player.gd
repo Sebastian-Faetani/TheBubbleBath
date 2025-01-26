@@ -14,11 +14,11 @@ extends CharacterBody3D
 @onready var eye_progress: TextureProgressBar = $EyesOpenUI/EyeProgress
 @onready var animation_player: AnimationPlayer = $EyesOpenUI/AnimationPlayer
 
-var eye_timer_duration: float = 60.0
+var eye_timer_duration: float = 6.0
 var eye_timer_elapsed: float = 0.00
 var eye_speed_multiplier: float = 1.0
 
-var shower_timer_duration: float = 6.0
+var shower_timer_duration: float = 60.0
 var shower_timer_elapsed: float = 0.00
 var shower_speed_multiplier: float = 1.0
 

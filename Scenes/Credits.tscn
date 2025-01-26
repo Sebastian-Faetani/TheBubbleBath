@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ocbdyki5eij"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_qk42o"]
+[ext_resource type="Texture2D" uid="uid://cxfft60sm3isk" path="res://Assets/Images/creditos.png" id="2_ih6i4"]
+[ext_resource type="FontFile" uid="uid://djqq0tfldx1iw" path="res://Assets/Font/Bates Shower.ttf" id="3_ill7p"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_qk42o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324.5)
+scale = Vector2(0.35969, 0.397693)
+texture = ExtResource("2_ih6i4")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1020.0
+offset_top = 585.0
+offset_right = 1121.0
+offset_bottom = 616.0
+theme_override_fonts/font = ExtResource("3_ill7p")
+theme_override_font_sizes/font_size = 20
+text = "Volver"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

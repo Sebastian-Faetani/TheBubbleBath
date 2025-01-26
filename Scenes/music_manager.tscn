@@ -11,6 +11,7 @@ script = ExtResource("1_r2l6j")
 stream = ExtResource("2_rtjqg")
 volume_db = -2.0
 bus = &"Background music"
+parameters/looping = false
 
 [node name="SonidoAmbiente" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tex5m")
