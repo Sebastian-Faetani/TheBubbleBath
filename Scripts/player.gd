@@ -14,17 +14,17 @@ extends CharacterBody3D
 @onready var eye_progress: TextureProgressBar = $EyesOpenUI/EyeProgress
 @onready var animation_player: AnimationPlayer = $EyesOpenUI/AnimationPlayer
 
-var eye_timer_duration: float = 6.0
+var eye_timer_duration: float = 60.0
 var eye_timer_elapsed: float = 0.00
 var eye_speed_multiplier: float = 1.0
 
-var shower_timer_duration: float = 60.0
+var shower_timer_duration: float = 6.0
 var shower_timer_elapsed: float = 0.00
 var shower_speed_multiplier: float = 1.0
 
 #signal shower_timer_updated(current_time: float, progress: float)
-
-
+var gameScene_win = preload("res://Scenes/win_scene.tscn")
+var gameScene_lose = preload("res://Scenes/lose_scene.tscn")
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	shower_progress.max_value = shower_timer_duration
@@ -46,6 +46,7 @@ func _process(delta):
 		shower_progress.value = shower_timer_elapsed
 
 	if shower_timer_elapsed >= shower_timer_duration:
+		GameManager.GameWon = true
 		EndGame()
 	
 	if eye_timer_elapsed < eye_timer_duration and eyes_open_ui.visible == true:
@@ -99,10 +100,13 @@ func _physics_process(_delta):
 	
 func EndGame():
 	MusicManager.fondoSceneStop()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if GameManager.GameWon == true:
-		get_tree().change_scene_to_file("res://Scenes/win_scene.tscn")
-	elif GameManager.GameOver == true:
-		get_tree().change_scene_to_file("res://Scenes/lose_scene.tscn")
+		get_tree().change_scene_to_packed(gameScene_win)
+		GameManager.GameWon = false
+	else:
+		get_tree().change_scene_to_packed(gameScene_lose)
+	GameManager.GameOver = false
 
 func MyEyes():
 	GameManager.EyesHurty = true
